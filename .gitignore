@@ -1,4 +1,7 @@
 .idea/
+.bloop/
+.metals/
+project/.bloop
 project/target/
 project/project/
 target/
