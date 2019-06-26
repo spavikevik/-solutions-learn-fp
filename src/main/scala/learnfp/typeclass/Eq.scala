@@ -4,10 +4,9 @@ trait Eq[A] {
   def eq(lhs: A, rhs: A): Boolean
 }
 
-// I think the following is redundant (probably?)
-// object Eq {
-//   def eq[A](lhs: A, rhs: A)(implicit eqt: Eq[A]) = eqt.eq(lhs, rhs)
-// }
+object Eq {
+  def eq[A](lhs: A, rhs: A)(implicit eqt: Eq[A]) = eqt.eq(lhs, rhs)
+}
 
 class EqOps[A](lhs: A)(implicit eqt: Eq[A]) {
   def ====(rhs: A): Boolean = eqt.eq(lhs, rhs)
