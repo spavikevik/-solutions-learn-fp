@@ -114,4 +114,4 @@ Solutions by @spavikevik.
   
 # Credits #
 
-- Yuriy Netesov
+- Yuriy Netesov ([@dehun](https://github.com/dehun))
