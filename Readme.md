@@ -22,13 +22,13 @@ Solutions by @spavikevik.
 
 ### Functors ###
 
-- [ ] Observe general functor pattern in `learnfp/functor/Functor.scala`
-- [ ] Implement `learnfp/functor/Id.scala`
-- [ ] Implement `learnfp/functor/Maybe.scala`
-- [ ] Implement `learnfp/functor/List.scala`
-- [ ] Implement `learnfp/functor/Disjunction.scala`
-- [ ] Implement `learnfp/functor/Writer.scala`
-- [ ] Implement `learnfp/functor/State.scala`
+- [x] Observe general functor pattern in `learnfp/functor/Functor.scala`
+- [x] Implement `learnfp/functor/Id.scala`
+- [x] Implement `learnfp/functor/Maybe.scala`
+- [x] Implement `learnfp/functor/List.scala`
+- [x] Implement `learnfp/functor/Disjunction.scala`
+- [x] Implement `learnfp/functor/Writer.scala`
+- [x] Implement `learnfp/functor/State.scala`
 - Extra material:
   - http://learnyouahaskell.com/functors-applicative-functors-and-monoids
   - https://thedet.wordpress.com/2012/04/28/functors-monads-applicatives-can-be-so-simple/
