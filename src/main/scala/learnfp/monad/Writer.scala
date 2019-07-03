@@ -9,8 +9,15 @@ object WriterInstance {
   implicit def writerMonadInstance[W](implicit monoid: Monoid[W]) = new Monad[({type E[X] = Writer[W, X]})#E] {
     override def pure[A](a: A): Writer[W, A] = Writer[W, A](() => (monoid.mzero, a))
     override def flatMap[A, B](a: Writer[W, A])(fx: A => Writer[W, B]): Writer[W, B] = {
-      a.run() match {
-        case (w, x) => fx(x)
+      Writer {
+        val xa = a.run()
+        val b = xa match {
+          case (_, x) => fx(x)
+        }
+
+        () => (xa, b.run()) match {
+          case ((wa, xa), (wb, xb)) => (wa |+| wb, xb)
+        }
       }
     }
   }
