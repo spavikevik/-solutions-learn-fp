@@ -36,13 +36,13 @@ Solutions by @spavikevik.
 
 ### Monads ###
 
-- [ ] Observe general monad pattern in `learnfp/monad/Monad.scala`
-- [ ] Implement `learnfp/monad/Id.scala`
-- [ ] Implement `learnfp/monad/Maybe.scala`
-- [ ] Implement `learnfp/monad/List.scala`
-- [ ] Implement `learnfp/monad/Disjunction.scala`
-- [ ] Implement `learnfp/monad/Writer.scala`
-- [ ] Implement `learnfp/monad/State.scala`
+- [x] Observe general monad pattern in `learnfp/monad/Monad.scala`
+- [x] Implement `learnfp/monad/Id.scala`
+- [x] Implement `learnfp/monad/Maybe.scala`
+- [x] Implement `learnfp/monad/List.scala`
+- [x] Implement `learnfp/monad/Disjunction.scala`
+- [x] Implement `learnfp/monad/Writer.scala`
+- [x] Implement `learnfp/monad/State.scala`
 - Extra material
   - Brian Beckman: Don't fear the Monad
   - http://eed3si9n.com/learning-scalaz/Monad+transformers.html
