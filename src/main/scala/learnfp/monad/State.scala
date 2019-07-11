@@ -9,12 +9,8 @@ object StateInstance {
     override def flatMap[A, B](a: State[S, A])(fx: A => State[S, B]): State[S, B] = {
       State[S, B] {
         (ns: S) => {
-          val na = a.run(ns)
-          val b = na match {
-            case (s, a) => fx(a)
-          }
-
-          b.run(na._1)
+          val b = fx(a.eval(ns))
+          b.run(a.exec(ns))
         }
       }
     }
