@@ -49,7 +49,7 @@ Solutions by @spavikevik.
   
 ### Foldable ###
 
-- [ ] Implement foldable in `learnfp/foldable/Foldable.scala`
+- [x] Implement foldable in `learnfp/foldable/Foldable.scala`
 
 ### Applicatives ###
 

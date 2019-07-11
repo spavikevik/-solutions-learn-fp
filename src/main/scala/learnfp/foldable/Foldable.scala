@@ -10,27 +10,50 @@ trait Foldable[C[_]] {
 
 object FoldableInstances {
   implicit def idFoldable = new Foldable[Id] {
-    override def foldr[A, B](xs: Id[A])(init: B)(fx: (A, B) => B): B = ???
+    override def foldr[A, B](xs: Id[A])(init: B)(fx: (A, B) => B): B = fx(xs.value, init)
   }
 
   implicit def listFoldable = new Foldable[List] {
-    override def foldr[A, B](xs: List[A])(init: B)(fx: (A, B) => B): B = ???
+    override def foldr[A, B](xs: List[A])(init: B)(fx: (A, B) => B): B = {
+      xs match {
+        case Nil => init
+        case head :: tl => fx(head, foldr(tl)(init)(fx))
+      }
+    }
   }
 
   implicit def tuple2Foldable = new Foldable[({type E[X] = Tuple2[X, X]})#E] {
-    override def foldr[A, B](xs: (A, A))(init: B)(fx: (A, B) => B): B = ???
+    override def foldr[A, B](xs: (A, A))(init: B)(fx: (A, B) => B): B = {
+      xs match {
+        case (fst, snd) => fx(fst, fx(snd, init))
+      }
+    }
   }
 
   implicit def tuple3Foldable = new Foldable[({type E[X] = (X, X, X)})#E] {
-    override def foldr[A, B](xs: (A, A, A))(init: B)(fx: (A, B) => B): B = ???
+    override def foldr[A, B](xs: (A, A, A))(init: B)(fx: (A, B) => B): B = {
+      xs match {
+        case (fst, snd, third) => fx(fst, tuple2Foldable.foldr((snd, third))(init)(fx))
+      }
+    }
   }
 
   implicit val maybeFoldable = new Foldable[Maybe] {
-    override def foldr[A, B](xs: Maybe[A])(init: B)(fx: (A, B) => B): B = ???
+    override def foldr[A, B](xs: Maybe[A])(init: B)(fx: (A, B) => B): B = {
+      xs match {
+        case Nothing() => init
+        case Just(value) => fx(value, init)
+      }
+    }
   }
 
   implicit def disjunctionFoldable[L] = new Foldable[({type E[X] = Disjunction[L, X]})#E] {
-    override def foldr[A, B](xs: Disjunction[L, A])(init: B)(fx: (A, B) => B): B = ???
+    override def foldr[A, B](xs: Disjunction[L, A])(init: B)(fx: (A, B) => B): B = {
+      xs match {
+        case LeftDisjunction(_) => init
+        case RightDisjunction(rightValue) => fx(rightValue, init)
+      }
+    }
   }
 }
 
