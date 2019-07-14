@@ -53,13 +53,13 @@ Solutions by @spavikevik.
 
 ### Applicatives ###
 
-- [ ] Observe general applicative pattern in `learnfp/applicative/Applicative.scala`
-- [ ] Implement `learnfp/applicative/Id.scala`
-- [ ] Implement `learnfp/applicative/Maybe.scala`
-- [ ] Implement `learnfp/applicative/List.scala`
-- [ ] Implement `learnfp/applicative/Disjunction.scala`
-- [ ] Implement `learnfp/applicative/Writer.scala`
-- [ ] Implement `learnfp/applicative/State.scala`
+- [x] Observe general applicative pattern in `learnfp/applicative/Applicative.scala`
+- [x] Implement `learnfp/applicative/Id.scala`
+- [x] Implement `learnfp/applicative/Maybe.scala`
+- [x] Implement `learnfp/applicative/List.scala`
+- [x] Implement `learnfp/applicative/Disjunction.scala`
+- [x] Implement `learnfp/applicative/Writer.scala`
+- [x] Implement `learnfp/applicative/State.scala`
 - Extra material 
   - https://en.wikibooks.org/wiki/Haskell/Applicative_functors
   - http://eed3si9n.com/learning-scalaz/Applicative.html
