@@ -66,15 +66,15 @@ Solutions by @spavikevik.
   
 ### Traversable ###
 
-- [ ] Implement `learnfp/traversable/Traversable.scala`
+- [x] Implement `learnfp/traversable/Traversable.scala`
 
 ### Nested ###
 
-- [ ] Implement `learnfp/nested/Nested.scala`
+- [x] Implement `learnfp/nested/Nested.scala`
 
 ### IO ###
 
-- [ ] Implement `learnfp/nested/IO.scala` 
+- [x] Implement `learnfp/nested/IO.scala` 
 
 ### Monad Transformers ###
 
